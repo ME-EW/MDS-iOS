@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "MDS-iOS",
+    name: "MDS",
     
     platforms: [
         .iOS(.v13)
@@ -25,6 +25,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "MDS-iOS",
-            dependencies: []),
-    ]
+            dependencies: [],
+            resources: [
+                .process("Resource/Color")
+            ]
+        ),
+    ],
+    swiftLanguageVersions: [.v5]
 )
