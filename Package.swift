@@ -5,10 +5,15 @@ import PackageDescription
 
 let package = Package(
     name: "MDS-iOS",
+    
+    platforms: [
+        .iOS(.v13)
+    ],
+    
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "MDS-iOS",
+            name: "MDS",
             targets: ["MDS-iOS"]),
     ],
     dependencies: [
