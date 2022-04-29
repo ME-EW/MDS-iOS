@@ -21,8 +21,5 @@ let package = Package(
         .target(
             name: "MDS-iOS",
             dependencies: []),
-        .testTarget(
-            name: "MDS-iOSTests",
-            dependencies: ["MDS-iOS"]),
     ]
 )
