@@ -29,7 +29,7 @@ let package = Package(
             path: "Sources",
             resources: [
                 .process("Resource/Color.xcassets"),
-                .copy("Resource/MDSIcon.xcassets"),
+                .process("Resource/MDSIcon.xcassets"),
             ]
         ),
     ],
