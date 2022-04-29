@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "Property 1=baram3@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Property 1=baram3@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

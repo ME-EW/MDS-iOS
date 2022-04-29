@@ -11,27 +11,29 @@ public enum MDSIcon {
     
     // MARK: - Character
     
-    public static var taeyang1: UIImage { .load(name: "taeyang1") }
+    public static var emptyCharacter: UIImage { .load(name: "img_character_nothing") }
+    
+    public static var taeyang1: UIImage { .load(name: "taeyang") }
     public static var taeyang2: UIImage { .load(name: "taeyang2") }
     public static var taeyang3: UIImage { .load(name: "taeyang3") }
     public static var taeyang4: UIImage { .load(name: "taeyang4") }
     
-    public static var baram1: UIImage { .load(name: "baram1") }
+    public static var baram1: UIImage { .load(name: "baram") }
     public static var baram2: UIImage { .load(name: "baram2") }
     public static var baram3: UIImage { .load(name: "baram3") }
     public static var baram4: UIImage { .load(name: "baram4") }
     
-    public static var haneul1: UIImage { .load(name: "haneul1") }
+    public static var haneul1: UIImage { .load(name: "haneul") }
     public static var haneul2: UIImage { .load(name: "haneul2") }
     public static var haneul3: UIImage { .load(name: "haneul3") }
     public static var haneul4: UIImage { .load(name: "haneul4") }
     
-    public static var kotnim1: UIImage { .load(name: "kotnim1") }
+    public static var kotnim1: UIImage { .load(name: "kotnim") }
     public static var kotnim2: UIImage { .load(name: "kotnim2") }
     public static var kotnim3: UIImage { .load(name: "kotnim3") }
     public static var kotnim4: UIImage { .load(name: "kotnim4") }
     
-    public static var jungjik1: UIImage { .load(name: "jungjik1") }
+    public static var jungjik1: UIImage { .load(name: "jungjik") }
     public static var jungjik2: UIImage { .load(name: "jungjik2") }
     public static var jungjik3: UIImage { .load(name: "jungjik3") }
     public static var jungjik4: UIImage { .load(name: "jungjik4") }
@@ -41,12 +43,12 @@ public enum MDSIcon {
     public static var maeum3: UIImage { .load(name: "maeum3") }
     public static var maeum4: UIImage { .load(name: "maeum4") }
     
-    public static var banghyang1: UIImage { .load(name: "banghyang1") }
+    public static var banghyang1: UIImage { .load(name: "banghyang") }
     public static var banghyang2: UIImage { .load(name: "banghyang2") }
     public static var banghyang3: UIImage { .load(name: "banghyang3") }
     public static var banghyang4: UIImage { .load(name: "banghyang4") }
     
-    public static var gureum1: UIImage { .load(name: "gureum1") }
+    public static var gureum1: UIImage { .load(name: "gureum") }
     public static var gureum2: UIImage { .load(name: "gureum2") }
     public static var gureum3: UIImage { .load(name: "gureum3") }
     public static var gureum4: UIImage { .load(name: "gureum4") }
@@ -87,18 +89,11 @@ public enum MDSIcon {
 
 extension UIImage {
     fileprivate static func load(name: String) -> UIImage {
-        #if SWIFT_PACKAGE
-            guard let image = UIImage(named: name, in: .module, compatibleWith: nil) else {
-                assert(false, "\(name) 이미지 로드 실패")
-                return UIImage()
-            }
-        #else
-        guard let image = UIImage(named: name, in: MDSBundle.bundle, compatibleWith: nil) else {
-                assert(false, "\(name) 이미지 로드 실패")
-                return UIImage()
-            }
-        #endif
-        image.accessibilityIdentifier = name
+        guard let image = UIImage(named: name, in: .module, compatibleWith: nil) else {
+            assert(false, "\(name) 이미지 로드 실패")
+            return UIImage()
+        }
+        
         return image
     }
     
@@ -107,6 +102,7 @@ extension UIImage {
         let image = UIGraphicsImageRenderer(size: newSize).image { _ in
             draw(in: CGRect(origin: .zero, size: newSize))
         }
+        
         return image
     }
 }
