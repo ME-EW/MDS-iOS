@@ -30,6 +30,7 @@ let package = Package(
             resources: [
                 .process("Resource/Color.xcassets"),
                 .process("Resource/MDSIcon.xcassets"),
+                .process("Resource/Fonts"),
             ]
         ),
     ],

@@ -20,7 +20,7 @@ public extension Fonts {
     static func install() {
         Fonts.installed = true
         for each in Fonts.allCases {
-            if let cfURL = Bundle.module.url(forResource:each.rawValue, withExtension: "ttf") {
+            if let cfURL = Bundle.module.url(forResource: each.rawValue, withExtension: "ttf") {
                 CTFontManagerRegisterFontsForURL(cfURL as CFURL, .process, nil)
             } else {
                 assertionFailure("Could not find font:\(each.rawValue) in bundle:\(Bundle.module)")
