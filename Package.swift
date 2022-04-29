@@ -26,8 +26,9 @@ let package = Package(
         .target(
             name: "MDS-iOS",
             dependencies: [],
+            path: "Sources",
             resources: [
-                .process("Resource/Color")
+                .process("Resource/Color.xcassets")
             ]
         ),
     ],
